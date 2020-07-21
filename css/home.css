@@ -1,0 +1,23 @@
+.home_category_zone{
+    position: relative;
+    margin-top: 20px;
+    width: auto;
+    height: 100px;
+    /* background-color:#5768AD; */
+}
+
+.home_category{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* text-decoration:#5768AD ; */
+}
+
+.home_cate_table{
+    width: 1000px;
+    height: 100px;
+    text-align: center;
+    margin: auto;
+    
+}

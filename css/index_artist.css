@@ -1,0 +1,15 @@
+a { 
+    text-decoration:none !important
+  } 
+  
+a:hover { text-decoration:none !important }
+
+#class_link{
+    width: fit-content;
+    text-decoration:none;
+    background-color: rgba(47, 79, 79, 0.575);
+    text-decoration-color: aliceblue;
+    color: aliceblue;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: italic;
+}

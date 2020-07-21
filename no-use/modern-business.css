@@ -1,0 +1,69 @@
+/*!
+ * Start Bootstrap - Modern Business (https://startbootstrap.com/template-overviews/modern-business)
+ * Copyright 2013-2019 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-logomodern-business-nav/blob/master/LICENSE)
+ */
+ body {
+    /* padding-top: 56px; */
+    height: 100%;
+    margin: 0;
+  }
+  a { 
+    text-decoration:none !important
+  } 
+  
+  a:hover { text-decoration:none !important }
+  
+  .content {
+    min-height: 100%;
+  }
+  
+  .content_inside {
+    padding: 20px;
+    padding-bottom: 50px;
+  }
+  
+  
+  .carousel-item {
+    height: 65vh;
+    min-height: 300px;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+  
+  .portfolio-item {
+    margin-bottom: 30px;
+  }
+  
+  .navbar-brand{
+   font-family: Courier New, Courier, monospace;
+   font-weight: bolder;
+   font-size: 30px;
+  }
+  
+  .bg-dark-edit {
+    background-color: darkslategray;
+  }
+  
+  
+  .Header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    /* margin-top: 60px; */
+    margin-bottom: 20px;
+    background-color: darkslategray;
+  }
+  
+  .navLogo {
+    padding-top: 16px;
+    font-family:'Courier New', Courier, monospace;
+    font-size: 50px;
+    font-weight: bolder;
+  }
+  
+ 

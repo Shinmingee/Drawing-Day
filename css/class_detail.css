@@ -1,0 +1,10 @@
+#class_intro_div{
+    border: 1px solid #48BAE4; 
+    height:auto; 
+    width:100%;
+}
+
+#class_intro_div p img{
+    width: 30%;
+    height: 100%
+}

@@ -1,0 +1,136 @@
+a { 
+    text-decoration:none !important
+  } 
+  
+a:hover { text-decoration:none !important }
+
+
+.step_nav_bar{
+    
+    display: flex;
+    border-bottom: 1px solid black;
+    background-color:#A0A0C8;
+    width: fit-content;
+    font-size: larger;
+    /* height: 50px; */
+    /*border-radius: ;*/
+}
+
+.step_nav_bar ul li{
+
+    text-decoration: #ced4da;
+    list-style-type: none;
+    display: inline;
+    outline: 1px;
+    /* margin-left: 20px; */
+
+}
+
+.step_here{
+    font-size: larger;
+    text-decoration: black;
+    font-weight: bolder;
+}
+
+
+#artist_info_section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    background: #fff;
+	padding-bottom: 70px;
+	padding-top: 60px;
+
+}
+
+.class_create{
+    /* display: block; */
+    display: flex;
+    width: 100%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #f5f6fa;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.class_create_form{
+
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #f5f6fa;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+
+}
+
+
+.class_create_title{
+
+    font-size: small;
+    font-weight: bold;
+
+}
+
+.class_create_section{
+    /* height: 1098px; */
+    padding: 35px;
+    margin: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 4px;
+    border: solid 1px #e4e5ed;
+    position: relative;
+    /* width: 500px; */
+    box-sizing: border-box;
+    background-color: #f5f6fa;
+}
+
+.class_create_section_border{
+    
+    /* padding : 15px; */
+    /* border-radius: 4px;
+    border: solid 1px #e4e5ed; */
+    position: relative;
+    background-color: #f5f6fa;
+    display: flex;
+    flex-direction: column;
+    width: 745px;
+    box-sizing: border-box;
+}
+
+.profile_box {
+
+    display: inline-flex;
+    background-color:#fff; 
+    background-image: url('/drawingDay/image/profile_default.png');
+    background-repeat: no-repeat;
+    background-size: 150px;
+    
+    border-radius: 70%; 
+    width:150px; 
+    height:150px;
+    overflow: hidden;
+    
+}
+.profile {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
