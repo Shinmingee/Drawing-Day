@@ -62,7 +62,7 @@ $date = date("Y-m-d H:i:s");
 //$uploads_dir = "ClassMainImg/";
 $id = $aritst_regi_member;
 
-$uploads_dir = "Artist_Regi/".$id."/";
+$uploads_dir = "Artist_Regi/";
 //$uploadfile = $uploads_dir . basename($_FILES['classMainImg']['name']);
 
 $uploadfile_name = $id."_profile";
@@ -76,7 +76,7 @@ $error = $_FILES['aritst_regi_profile']['error'];
 $name = $_FILES['aritst_regi_profile']['name'];
 $ext = array_pop(explode('.', $name));
 
-echo $ext;
+//echo $ext;
  
 // 오류 확인
 if( $error != UPLOAD_ERR_OK ) {
@@ -101,7 +101,7 @@ if( !in_array($ext, $allowed_ext) ) {
 }
  
 // 파일 이동
-move_uploaded_file( $_FILES['aritst_regi_profile']['tmp_name'], $uploadfile.".".$ext);
+move_uploaded_file($_FILES['aritst_regi_profile']['tmp_name'], $uploadfile.".".$ext);
 
 $aritst_regi_profile = $uploadfile.".".$ext;
 
