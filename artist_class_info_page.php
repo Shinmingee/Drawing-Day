@@ -119,9 +119,9 @@
   <h3>작가 등록 과정</h3>
         <section class="step_nav_bar">
                 <ul>
-                    <li class="step_here">작가정보 입력</li>
+                    <li>작가정보 입력</li>
                     <li>>></li>
-                    <li>수업관련 정보</li>
+                    <li class="step_here">수업관련 정보</li>
                     <li>>></li>
                     <li>가격책정</li>
                     <li>>></li>
@@ -130,13 +130,13 @@
                 </ul>
         </section>
         <section class="class_create_section">
-          <h5>작가정보입력<h5><br><br>
+          <h5>수업관련 정보<h5><br><br>
           <div class="class_create_section_border">
 
           <form enctype="multipart/form-data" name="aritst_regi_form" id="aritst_regi_form" action="artist_info_save.php" method="POST">
 
             <!-- <hr style="margin-bottom: 0px;"> -->
-            <p style="margin-top: 10px; margin-bottom: 0px; font-weight: bold;">1. 본인인증</p>
+            <p style="margin-top: 10px; margin-bottom: 0px; font-weight: bold;">1. 수업등록지역(대표)</p>
             <hr style="margin-top: 0px;">
             <p class="class_create_title">◈ 핸드폰 인증</p>
 
@@ -192,7 +192,7 @@
             </div>
 
 
-            <p style="margin-top: 50px; margin-bottom: 0px; font-weight: bold;">2. 학력인증</p>
+            <p style="margin-top: 50px; margin-bottom: 0px; font-weight: bold;">2. 수업카테고리</p>
             <hr style="margin-top: 0px;">
 
 
@@ -225,7 +225,7 @@
             </div>
 
 
-            <p style="margin-top: 50px; margin-bottom: 0px; font-weight: bold;">3. 경력인증</p>
+            <p style="margin-top: 50px; margin-bottom: 0px; font-weight: bold;">3. 수업참여인원</p>
             <hr style="margin-top: 0px;">
 
             <p class="class_create_title">◈ 활동사항<br>(자신의 활동내역을 드러낼 수 있으면 됩니다.)</p>
@@ -252,6 +252,9 @@
                 <p class="help-block"></p>
                 </div>
             </div>
+            <p style="margin-top: 50px; margin-bottom: 0px; font-weight: bold;">4. 수업제목 & 커버이미지</p>
+            <hr style="margin-top: 0px;">
+
             
             <br>
             <br>
@@ -356,7 +359,7 @@
 
 
 
-    <script type="text/javascript" src="js/artist_regi_step1.js"></script>
+    <script type="text/javascript" src="js/artist_regi_step2.js"></script>
 
 
 

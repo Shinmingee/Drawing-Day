@@ -14,15 +14,17 @@
 
 	//$db = new mysqli("localhost","shinmingee", "111","drawingDB");
 	//$db->set_charset("utf8");
+
+	// if($db_con){
+	// 	echo '참';
+	// 	}else{
+	// 	echo 'ggg';
+	// 	}
 	
 	mysqli_select_db($db_con, $mysql_dbname) or die('DB선택 실패');
 
 
-// if($db_con){
-// echo '참';
-// }else{
-// echo 'ggg';
-// }
+
 	
 	
 
