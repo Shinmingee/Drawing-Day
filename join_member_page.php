@@ -276,7 +276,7 @@
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
 
-    <script type="text/javascript" src="js/join_member.js"></script>
+    <script type="text/javascript" src="js/join_member_page.js"></script>
 </body>
 
 </html>

@@ -133,22 +133,27 @@
           <h5>작가정보입력<h5><br><br>
           <div class="class_create_section_border">
 
-          <form enctype="multipart/form-data" name="aritst_regi_form" id="aritst_regi_form" action="artist_info_save.php" method="POST">
+          <form enctype="multipart/form-data" name="aritst_regi_form" id="aritst_regi_form" action="artist_info_save.php" method="POST" onsubmit="return checkSubmit()">
 
             <!-- <hr style="margin-bottom: 0px;"> -->
             <p style="margin-top: 10px; margin-bottom: 0px; font-weight: bold;">1. 본인인증</p>
             <hr style="margin-top: 0px;">
+            <p style="line-height: 10px; margin-bottom: 0px; font-weight: bold; font-size: 10px; color: brown;">*필수입력</p>
             <p class="class_create_title">◈ 핸드폰 인증</p>
 
             <div class="control-group form-group">
                 <div class="controls">
                 <!-- <label>핸드폰 인증</label> -->
-                <input type="text" name="aritst_regi_phone" id="aritst_regi_phone" class="form-control" placeholder="핸드폰 번호를 인증해주세요" required>
-                <button style="font-size: small;" class="btn btn-primary">핸드폰 인증</button>
+                <input type="text" name="aritst_regi_phone" id="aritst_regi_phone" class="form-control" placeholder="핸드폰 번호를 인증해주세요">
+                <div style="margin-top: 3px; font-size: smaller; color: brown;">
+                        <span id="phone_msg"></span>
+                    </div>
+                <button id="aritst_regi_phone_btn" name="aritst_regi_phone_btn" style="font-size: small;" disabled>핸드폰 인증</button>
                 <p class="help-block"></p>
                 </div>
             </div>
 
+            <p style="line-height: 10px; margin-bottom: 0px; font-weight: bold; font-size: 10px; color: brown;">*필수입력</p>
             <p class="class_create_title">◈ 프로필 사진</p>
 
             <div class="control-group form-group">
@@ -167,17 +172,21 @@
                 </div>
             </div>
 
-            <p class="class_create_title">◈ 사용 별명</p>
+            <p style="line-height: 10px; margin-bottom: 0px; font-weight: bold; font-size: 10px; color: brown;">*필수입력</p>
+            <p class="class_create_title">◈ 사용 별명(특수문자 제외, 20자 이내)</p>
 
             <div class="control-group form-group">
                 <div class="controls">
                     <!-- <label>별명 설정</label> -->
-                    <input type="text" name="aritst_regi_nick" id="aritst_regi_nick" class="form-control" placeholder="자신을 잘 나타낼 수 있는 별명을 입력해주세요" required>
+                    <input type="text" name="aritst_regi_nick" id="aritst_regi_nick" class="form-control" placeholder="자신을 잘 나타낼 수 있는 별명을 입력해주세요" maxlength=20>
+                    <div style="margin-top: 3px; font-size: smaller; color: brown;">
+                        <span id="nick_msg"></span>
+                    </div>
                     <!-- <button style="font-size: small;" class="btn btn-primary">프로필 사진 선택</button> -->
                 </div>
             </div>
 
-
+            <p style="line-height: 10px; margin-bottom: 0px; font-weight: bold; font-size: 10px; color: brown;">*필수입력</p>
             <p class="class_create_title">◈ 신분증 인증<br>(신분증은 주민등록증, 운전면허증, 여권만 가능합니다.)</p>
             <div class="control-group form-group">
                 <div class="controls">
@@ -356,7 +365,7 @@
 
 
 
-    <script type="text/javascript" src="js/artist_regi_step1.js"></script>
+    <script type="text/javascript" src="js/artist_info_regi_step1.js"></script>
 
 
 

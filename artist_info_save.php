@@ -345,18 +345,23 @@ if(strlen($name_portfolio)>0){
 //$aritst_regi_portfolio = $_POST['aritst_regi_portfolio'];
 
 
-// echo $aritst_regi_member;
-// echo $aritst_regi_phone;
-// echo $aritst_regi_nick;
+// echo $aritst_regi_member."|";
+// echo $aritst_regi_phone."|";
+// echo $aritst_regi_nick."|";
+// echo $aritst_regi_profile."|";
+// echo $aritst_regi_id."|";
 
-// echo $aritst_regi_univ;
-// echo $aritst_regi_univ_major;
-// echo $aritst_regi_gradu;
-// echo $aritst_regi_gradu_major;
-// echo $aritst_regi_sns;
-// echo $aritst_regi_blog;
-// echo $aritst_regi_youtube;
-// echo $date;
+// echo $aritst_regi_univ."|";
+// echo $aritst_regi_univ_major."|";
+// echo $aritst_regi_univ_file."|";
+// echo $aritst_regi_gradu."|";
+// echo $aritst_regi_gradu_major."|";
+// echo $aritst_regi_gradu_file."|";
+// echo $aritst_regi_sns."|";
+// echo $aritst_regi_blog."|";
+// echo $aritst_regi_youtube."|";
+// echo $aritst_regi_portfolio."|";
+// echo $date."|";
 
 
 
@@ -366,29 +371,26 @@ if(strlen($name_portfolio)>0){
 
 
 //DB에 넣기
-$sql = "insert into artist_list(user_id, artist_tel, artist_profile, artist_nickname, artist_id_photo, artist_univ_name, artist_univ_major, artist_univ_photo, artist_gradu_name, artist_gradu_major, artist_gradu_photo, artist_sns, aritst_youtube, artist_blog, artist_protfolio, artist_regi_date) values ('" .$aritst_regi_member. "','" .$aritst_regi_phone. "'," .$aritst_regi_profile.",'".$aritst_regi_nick."','".$aritst_regi_id."','".$aritst_regi_univ."','".$aritst_regi_univ_major."','".$aritst_regi_univ_file."',".$aritst_regi_gradu.",'".$aritst_regi_gradu_major."','".$aritst_regi_gradu_file."','".$aritst_regi_sns."','".$aritst_regi_youtube."','".$aritst_regi_blog."','".$aritst_regi_portfolio."','".$date."');";
+$sql = "insert into artist_list(user_id, artist_tel, artist_profile, artist_nickname, artist_id_photo, artist_univ_name, artist_univ_major, artist_univ_photo, artist_gradu_name, artist_gradu_major, artist_gradu_photo, artist_sns, artist_youtube, artist_blog, artist_portfolio, artist_regi_date) values ('" .$aritst_regi_member. "','" .$aritst_regi_phone. "','" .$aritst_regi_profile."','".$aritst_regi_nick."','".$aritst_regi_id."','".$aritst_regi_univ."','".$aritst_regi_univ_major."','".$aritst_regi_univ_file."','".$aritst_regi_gradu."','".$aritst_regi_gradu_major."','".$aritst_regi_gradu_file."','".$aritst_regi_sns."','".$aritst_regi_youtube."','".$aritst_regi_blog."','".$aritst_regi_portfolio."','".$date."');";
 
- 
+//echo $sql;
+// $sql = "insert into artist_list(user_id, artist_tel, artist_profile, artist_nickname, artist_id_photo) values ('" .$aritst_regi_member. "','" .$aritst_regi_phone. "','" .$aritst_regi_profile."','".$aritst_regi_nick."','".$aritst_regi_id."');";
+
 $result = mysqli_query($db_con, $sql);
 
-// if($result){
-//     echo "1";
-// }else{
-//     echo "-1";
-// }
-
-
+if($result){
 ?>
-
-
+<meta charset="utf-8">
+				<!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+				<meta name="description" content="">
+				<meta name="author" content=""> -->
+  <script type="text/javascript">alert('저장되었습니다!');</script>
+  <meta http-equiv="refresh" content="0 url=/drawingDay/artist_class_info_page.php" >
+<?php } else{?>
 
 <meta charset="utf-8">
-  <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content=""> -->
-  <script type="text/javascript">alert('회원가입이 완료되었습니다.');</script>
-  <meta http-equiv="refresh" content="0 url=/drawingDay/artist_class_info_page.php" >
+<script type="text/javascript">alert('[저장실패] 저장 시 오류가 발생했습니다!\n담당자에게 문의해주세요');</script>
+<meta http-equiv="refresh" content="0 url=/drawingDay/artist_info_page.php" >
 
-<?php //} ?>
-<?php //} ?>
-<?php //} ?>
+<?php }?>
+

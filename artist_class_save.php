@@ -26,7 +26,7 @@ $class_intro_txt = $_POST['class_intro_txt'];
 $class_tool = $_POST['class_tool'];
 
 //클래스 태마 관련
-$check = $_POST['class_theme'];
+$check = $_POST['class_theme']; 
 // POST로 넘어온 값들을 $check에 저장
 $array = array($check);
 // check의 값들을 새로운 배열에 저장

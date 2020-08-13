@@ -28,8 +28,8 @@ $mail->Host = "smtp.gmail.com"; // email 보낼때 사용할 서버를 지정
 $mail->SMTPAuth = true; // SMTP 인증을 사용함
 $mail->Port = 465; // email 보낼때 사용할 포트를 지정
 $mail->SMTPSecure = "ssl"; // SSL을 사용함
-$mail->Username = "gkgkgk0204@gmail.com"; // Gmail 계정
-$mail->Password = "djfdmaanf159#"; // 패스워드
+$mail->Username = "drawingday07@gmail.com"; // Gmail 계정
+$mail->Password = "ahffk159#"; // 패스워드
 $mail->SetFrom('gkgkgk0204@gmail.com', 'drawingday'); // 보내는 사람 email 주소와 표시될 이름 (표시될 이름은 생략가능)
 $mail->AddAddress($to); // 받을 사람 email 주소와 표시될 이름 (표시될 이름은 생략가능)
 $mail->Subject = '[Drawing-Day]이메일 인증'; // 메일 제목

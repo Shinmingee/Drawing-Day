@@ -1,3 +1,143 @@
+
+//전화번호 
+
+//입력시 3/4/4 로 "-" 넣어주기
+$(document).ready(function (e){
+    $("#aritst_regi_phone").on("keyup", function() { 
+        $("#aritst_regi_phone_btn").attr("disabled", true);
+        $(this).val( $(this).val().replace(/[^0-9]/g, "").replace(/(01[016789])([1-9]{1}[0-9]{2,3})([0-9]{4})$/,"$1-$2-$3") 
+        );
+    });
+})
+
+//중복확인 바로바로
+//핸드폰 형식에 맞추기
+$(document).ready(function(e){
+    $("#aritst_regi_phone").on("keyup", function(){ //check라는 클래스에 입력을 감지
+        if($('#aritst_regi_phone').val().length <13){
+            $("#phone_msg").html("올바른 핸드폰 번호를 입력해주세요");
+            $('#phone_msg').css("color", "brown");
+            $("#aritst_regi_phone_btn").attr("disabled", true);
+            
+
+
+        }else if($('#aritst_regi_phone').val().indexOf("-") === 3 || $('#aritst_regi_phone').val().indexOf("-") === 8){
+            //$("#result_id_msg").html("아이디는 4자 이상이여야 합니다.")
+        // }else{
+           var self = $(this); 
+           var phoneNum; 
+		
+		    if(self.attr("id") === "aritst_regi_phone"){ 
+                phoneNum = self.val(); 
+            } 
+            
+            $.ajax({//post방식으로 name_check.php에 입력한 값을 넘깁니다
+                type: 'POST',
+                url : "/drawingDay/phoneNum_check.php",
+                data:{
+                    phoneNum : phoneNum
+                },
+                success : function(result){ 
+                    console.log(result);
+                    console.log(result.length);
+
+                    if(result=="\n\n\nno"){ //만약 data값이 전송되면
+                        $("#phone_msg").html("이미 사용중인 연락처입니다."); //div태그를 찾아 html방식으로 data를 뿌려줍니다.
+                        $('#phone_msg').css("color", "brown");
+                        $("#aritst_regi_phone_btn").disabled = true;
+                    }else if(result=="\n\n\nok"){
+                        $("#phone_msg").html("사용 가능한 연락처입니다."); //div태그를 찾아 html방식으로 data를 뿌려줍니다.
+                        $('#phone_msg').css("color", "#5280D4");
+                        $("#aritst_regi_phone_btn").attr("disabled", false);
+                        //여기서만 버튼 활성화
+                        
+
+                    }
+              
+                }
+
+            }); //end ajax
+        }else if($('#aritst_regi_phone').val().length > 13){
+            $("#phone_msg").html("올바른 핸드폰 번호를 입력해주세요");
+            $('#phone_msg').css("color", "brown");
+            $("#aritst_regi_phone_btn").attr("disabled", true);
+
+
+        }
+    }); //end keyup
+
+});
+
+
+//닉네임
+//
+//특수문자 제외, 20자 이하 
+
+//중복확인 바로바로
+//실시간 닉네임 중복체크
+var nickName_check=0;
+var regExp_nick = /[\{\}\[\]\/?.,;:|\)*~`!^\-+<>@\#$%&\\\=\(\'\"]/gi;
+
+$(document).ready(function(e) { 
+    $("#aritst_regi_nick").on("keyup", function(){ //check라는 클래스에 입력을 감지
+        if($('#aritst_regi_nick').val().length <1){
+            
+            $("#nick_msg").html("사용하실 닉네임을 입력해주세요.");
+            $('#nick_msg').css("color", "brown");
+
+        }else if($('#aritst_regi_nick').val().length >= 1 && $('#aritst_regi_nick').val().length <= 20 ){
+            
+            if(nickname.test(regExp_nick)){
+                $("#nick_msg").html("특수문자는 제외하고 입력해주세요.");
+                $('#nick_msg').css("color", "brown");
+                $('#aritst_regi_nick').empty();
+            
+            }else{
+                    //if($('#aritst_regi_nick').val())
+                                
+                    var self = $(this); 
+                    var usernick; 
+
+                    if(self.attr("id") === "aritst_regi_nick"){ 
+                        usernick = self.val(); 
+                    } 
+                    
+                    $.ajax({//post방식으로 name_check.php에 입력한 값을 넘깁니다
+                        type: 'POST',
+                        url : "/drawingDay/nickname_check.php",
+                        data:{
+                            usernick : usernick
+                        },
+                        success : function(result){ 
+                            console.log(result);
+                            console.log(result.length);
+
+                            if(result=="\n\n\nno"){ //만약 data값이 전송되면
+                                $("#nick_msg").html("이미 사용중인 닉네임입니다."); //div태그를 찾아 html방식으로 data를 뿌려줍니다.
+                                $('#nick_msg').css("color", "brown");
+                            }else if(result=="\n\n\nok"){
+                                $("#nick_msg").html("사용 가능한 닉네임입니다."); //div태그를 찾아 html방식으로 data를 뿌려줍니다.
+                                $('#nick_msg').css("color", "#5280D4");
+                                
+                                nickName_check=100;
+                            }
+                    
+                        }
+
+                    }); //end ajax
+            }
+
+        }else if($('#aritst_regi_nick').val().length>21){
+            $("#nick_msg").html("닉네임은 20자 이하로 입력해주세요.");
+            $('#nick_msg').css("color", "brown");        
+        }
+    }); //end keyup
+});	//실시간 닉네임 중복체크 END
+
+
+
+//파일저장 시 크기를 제한하여 초과파일은 업로드를 막는다(이미지:2MB, pdf:5MB)
+
 //프로필사진
 $(document).ready(function (e){
 
@@ -361,3 +501,74 @@ document.querySelector("#pdf-file").addEventListener('change', function() {
     showPDF(_OBJECT_URL);
 });
 
+
+
+function checkSubmit(){//빈칸체크
+  
+
+    // if(check_email==0){
+    //     alert('이메일 인증을 해주세요');
+    //     $("#inputEmail").focus();
+    //     return false;
+    // }
+
+    // if(nickName_check==0){
+    //     alert('닉네임을 확인해주세요');
+    //     $("#inputNickname").focus();
+    //     return false;
+    // }
+
+    // if(name_check==0){
+    //     alert('이름을 확인해주세요');
+    //     $("#inputName").focus();
+    //     return false;
+    // }
+
+//빈칸
+
+//닉네임
+// if($("#inputNickname").val() ==''){
+//     alert('닉네임를 입력하세요');
+//     $("#inputNickname").focus();
+//     return false;
+// }
+       
+//이름
+
+// if($("#inputName").val() ==''){
+//     alert('이름을 입력하세요');
+//     $("#inputName").focus();
+//     return false;
+// }
+
+
+//닉네임
+
+
+
+
+
+
+
+
+//이메일        
+        // var email = $('#inputEmail').val();
+
+        // var emailRegex = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
+        
+        // if(email.length<=0){
+        //     alert('이메일을 입력하세요');
+        //     $("#inputEmail").focus();
+        //     return false;
+        // }else{
+        //     if (!emailRegex.test(email)) {
+        //     alert('이메일 주소가 유효하지 않습니다. ex)abc@abc.com');
+        //     $("#inputEmail").focus();
+        //     return false;
+        //     }
+        // }
+
+
+
+    
+}
